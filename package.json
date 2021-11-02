@@ -1,0 +1,38 @@
+{
+  "name": "videoqanibot",
+  "version": "1.0.0",
+  "description": "Videolarni qidirish uchun telegram bot",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=production node .",
+    "dev": "nodemon .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mcpeblocker/VideoQani-Bot.git"
+  },
+  "keywords": [
+    "bot",
+    "telegram",
+    "video",
+    "qani",
+    "inline",
+    "helper",
+    "mcpeblocker"
+  ],
+  "author": "mcpeblocker",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mcpeblocker/VideoQani-Bot/issues"
+  },
+  "homepage": "https://github.com/mcpeblocker/VideoQani-Bot#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "mongoose": "^6.0.12",
+    "telegraf": "^4.4.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.14"
+  }
+}
