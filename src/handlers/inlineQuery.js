@@ -3,13 +3,12 @@ const { videoService } = require("../database/services")
 function handleInlineQuery(bot) {
     bot.on('inline_query', async (ctx) => {
         let { query, offset } = ctx.inlineQuery;
-        console.log(query, offset);
+        offset = isNaN(parseInt(offset)) ? 0 : parseInt(offset);
         let videos = await videoService.findAll({
             query,
-            skip: parseInt(offset) || 0,
+            skip: offset,
             limit: 50
         });
-        console.log(videos);
         let results = videos.map(video => ({
             id: video._id,
             type: "video",
@@ -17,7 +16,9 @@ function handleInlineQuery(bot) {
             title: video.title,
             description: video.description  
         }));
-        ctx.answerInlineQuery(results)
+        ctx.answerInlineQuery(results, {
+            offset
+        })
     })
 }
 

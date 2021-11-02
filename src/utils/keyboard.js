@@ -9,19 +9,20 @@ const getAdminPanelKeyboard = () => Markup.inlineKeyboard([
     ]
 ]);
 
-const getBackKeyboard = () => Markup.inlineKeyboard([
-    [
-        Markup.button.callback("◀️ Orqaga", "back")
-    ]
-]);
-
 const backKeyboard = Markup.inlineKeyboard([
     [
         Markup.button.callback("◀️ Orqaga", "back")
     ]
 ])
 
+const startKeyboard = Markup.inlineKeyboard([
+    [
+        Markup.button.switchToChat("🔍 Video izlash", "")
+    ]
+])
+
 module.exports = {
     getAdminPanelKeyboard,
-    backKeyboard
+    backKeyboard,
+    startKeyboard
 }
